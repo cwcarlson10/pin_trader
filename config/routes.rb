@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pins/index'
+
+  get 'pins/show'
+
+  get 'pins/new'
+
+  get 'pins/edit'
+
   devise_for :users
   get 'static_pages/home'
 

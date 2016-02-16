@@ -1,2 +1,6 @@
-h1 Pins#index
-p Find me in app/views/pins/index.html.slim
+h1 Pins
+
+- @pins.each do |pin|
+  h3 = pin.title
+  p = pin.description
+  .btn.btn-primary = link_to "PIN", pins_show_path(pin)

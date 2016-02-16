@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html
+  head
+    title Disny Pin Trading
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true 
+    = csrf_meta_tags 
+  body
+    nav.navbar.navbar-default
+      .container
+        /! Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          = link_to "Pin Trader Central", root_path, class: "navbar-brand navbar-title"
+          ul.nav.navbar-nav.navbar-right
+            li
+              = link_to "Pins", pins_index_path
+  = if notice
+    .alert-default.notice = notice 
+  = if alert
+    .alert-default.alert = alert
+  .container
+    = yield 
+
